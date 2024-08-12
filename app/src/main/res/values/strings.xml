@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SubletApp</string>
+    <string-array name="spinner_items">
+        <item>University Accommodation</item>
+        <item>Private</item>
+        <item>Others</item>
+    </string-array>
+</resources>
+

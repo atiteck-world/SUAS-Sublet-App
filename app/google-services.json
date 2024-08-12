@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1056929245874",
+    "project_id": "sublet-app-2024",
+    "storage_bucket": "sublet-app-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056929245874:android:0a775362fb58d275ccb7ab",
+        "android_client_info": {
+          "package_name": "com.atsuite.subletapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHep1cp7iI122aXJc4WyluPbaBo8cinfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
