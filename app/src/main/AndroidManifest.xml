@@ -18,7 +18,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDje5AqyndJaxMY5y_8yY2a5bgsifVxRto" />
+            android:value="" />
 
         <activity
             android:name=".AddSubletActivity"
