@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Button Shape Style -->
+    <style name="ButtonShape">
+        <item name="cornerRadius">8dp</item>
+        <item name="strokeColor">#000000</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+</resources>

@@ -27,152 +27,163 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp"
-        android:layout_margin="16dp">
-
-        <!-- Sublet Title -->
-        <EditText
-            android:id="@+id/editTextTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Sublet Title"
-            android:inputType="text"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Sublet Type -->
-        <Spinner
-            android:id="@+id/spinnerSubletType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:padding="12dp"
-            android:entries="@array/spinner_items"
-            android:background="@drawable/edit_text_background"
-            android:spinnerMode="dropdown" />
-
-        <!-- Sublet Description -->
-        <EditText
-            android:id="@+id/editTextDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Description(Optional)"
-            android:inputType="textMultiLine"
-            android:minLines="4"
-            android:gravity="top"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Sublet Price -->
-        <EditText
-            android:id="@+id/editTextPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Price per month"
-            android:inputType="numberDecimal"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Availability Dates -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="12dp">
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:layout_margin="16dp">
+
+            <!-- Sublet Title -->
+            <EditText
+                android:id="@+id/editTextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dormitory name"
+                android:inputType="text"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Sublet Type -->
+            <Spinner
+                android:id="@+id/spinnerSubletType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:padding="12dp"
+                android:entries="@array/spinner_items"
+                android:background="@drawable/edit_text_background"
+                android:spinnerMode="dropdown" />
+
+            <!-- Sublet Description -->
+            <EditText
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description(Optional)"
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                android:gravity="top"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Sublet Price -->
+            <EditText
+                android:id="@+id/editTextPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price per month. Eg: 220"
+                android:inputType="numberDecimal"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Availability Dates -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Availability:"
+                    android:layout_gravity="center_vertical"
+                    android:paddingEnd="8dp"/>
+
+                <EditText
+                    android:id="@+id/editTextStartDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Start Date"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:focusable="false"
+                    android:background="@drawable/edit_text_background"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <EditText
+                    android:id="@+id/editTextEndDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="select End Date"
+                    android:focusable="false"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:background="@drawable/edit_text_background"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <!-- Sublet Address -->
+            <EditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:inputType="textPostalAddress"
+                android:padding="12dp"
+                android:background="@drawable/edit_text_background"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+            <!-- Location Picker -->
+            <Button
+                android:id="@+id/buttonPickLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pick Location on Map"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/textLatLng"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Availability:"
-                android:layout_gravity="center_vertical"
-                android:paddingEnd="8dp"/>
+                android:text="LatLng"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="12dp"/>
 
-            <EditText
-                android:id="@+id/editTextStartDate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Start Date"
-                android:inputType="date"
-                android:padding="12dp"
-                android:background="@drawable/edit_text_background"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp" />
+            <!-- Room Image Preview -->
+            <ImageView
+                android:id="@+id/imageViewRoom"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/person_24px" />
 
-            <EditText
-                android:id="@+id/editTextEndDate"
-                android:layout_width="0dp"
+            <!-- Upload Room Image Button -->
+            <Button
+                android:id="@+id/buttonUploadImage"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="End Date"
-                android:inputType="date"
-                android:padding="12dp"
-                android:background="@drawable/edit_text_background"
-                android:layout_weight="1" />
+                android:text="Choose Room Image"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Save Sublet Button -->
+            <Button
+                android:id="@+id/buttonSaveSublet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Save Sublet / Upload Picture"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="#FFFFFF" />
+
         </LinearLayout>
-
-        <!-- Sublet Address -->
-        <EditText
-            android:id="@+id/editTextAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Address"
-            android:inputType="textPostalAddress"
-            android:padding="12dp"
-            android:background="@drawable/edit_text_background"
-            android:layout_marginBottom="12dp" />
-
-        <com.google.android.gms.maps.MapView
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
-
-        <!-- Location Picker -->
-        <Button
-            android:id="@+id/buttonPickLocation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pick Location on Map"
-            android:backgroundTint="@color/colorAccent"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp" />
-        <TextView
-            android:id="@+id/textLatLng"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="LatLnt"
-            android:textStyle="normal"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            android:layout_marginBottom="12dp"/>
-
-        <!-- Upload Images -->
-        <Button
-            android:id="@+id/buttonUploadImages"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Upload Images"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="#FFFFFF"
-            android:layout_marginBottom="12dp" />
-
-        <!-- Save Sublet Button -->
-        <Button
-            android:id="@+id/buttonSaveSublet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Sublet"
-            android:backgroundTint="@color/buttonColor"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email, password;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
-    private TextView textViewRegister;
+    private TextView textViewRegister, textViewForgotPassword;
     //private Toolbar toolbar;
     private static final String TAG ="LoginActivity";
 
@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.editTextPassword);
         progressBar = findViewById(R.id.progressBar);
         textViewRegister = findViewById(R.id.textViewRegister);
+        textViewForgotPassword = findViewById(R.id.textViewForgotPassword);
 
         auth = FirebaseAuth.getInstance();
 
@@ -91,6 +92,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        textViewForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
                 startActivity(intent);
             }
         });

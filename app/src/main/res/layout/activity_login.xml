@@ -7,21 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-   <!-- <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="Sublet App" />
-
-    </com.google.android.material.appbar.AppBarLayout>-->
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -81,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Login"
-                    android:backgroundTint="@color/buttonColor"
+                    android:backgroundTint="@color/colorPrimaryDark"
                     android:textColor="#FFFFFF"
                     android:padding="12dp"
                     android:layout_marginBottom="12dp" />
@@ -101,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Forgot Password? Reset"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimary"
                     android:layout_gravity="center_horizontal"
                     android:padding="12dp" />
 
@@ -111,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New User? Register"
-                    android:textColor="@color/colorPrimaryDark"
+                    android:textColor="@color/colorPrimary"
                     android:layout_gravity="center_horizontal"
                     android:padding="12dp" />
             </LinearLayout>

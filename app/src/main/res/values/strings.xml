@@ -1,9 +1,14 @@
 <resources>
-    <string name="app_name">SubletApp</string>
+    <string name="app_name">Sublet App</string>
     <string-array name="spinner_items">
         <item>University Accommodation</item>
         <item>Private</item>
         <item>Others</item>
     </string-array>
+
+    <!-- Image Description -->
+    <string name="person_image_desc">Person Image</string>
+
+    <string name="room_picture_desc">Room Picture</string>
 </resources>
 

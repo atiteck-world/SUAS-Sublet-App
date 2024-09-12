@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF7D29</color>
     <color name="bottomNavBar">#ede7dc</color>
     <color name="buttonColor">#0e86d4</color>
+    <!-- Error Color -->
+    <color name="colorError">#B00020</color>
+    <!-- Additional Colors -->
+    <color name="colorTextPrimary">#000000</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorBackground">#FFFFFF</color>
 </resources>

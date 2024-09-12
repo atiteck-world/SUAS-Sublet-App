@@ -83,10 +83,10 @@ public class RegisterActivity extends AppCompatActivity {
         edtConfirmPassword = findViewById(R.id.editTextConfirmPassword);
 
         // radioButton for gender
-         radioGroupGender = findViewById(R.id.radioGroupGender);
-         radioGroupGender.clearCheck();
+        radioGroupGender = findViewById(R.id.radioGroupGender);
+        radioGroupGender.clearCheck();
 
-         // Setting up datepicker on dob editText
+        // Setting up datepicker on dob editText
         edtDOB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 int selectedGenderId = radioGroupGender.getCheckedRadioButtonId();
                 radioButtonGenderSelected = findViewById(selectedGenderId);
-                
+
                 // Obtain entered data
                 String fullName = edtFullname.getText().toString();
                 String email = edtEmail.getText().toString();
@@ -130,7 +130,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String gender; // Can't obtain the value before verifying if any button was selected or not
 
                 // Validate mobile number
-                String mobileRegex = "[4][9][0-9]";
+                String mobileRegex = "[0-9]";
                 Matcher mobileMatcher;
                 Pattern mobilePattern = Pattern.compile(mobileRegex);
                 mobileMatcher = mobilePattern.matcher(phone);
@@ -167,11 +167,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Please enter your address.", Toast.LENGTH_LONG).show();
                     edtPhone.setError("Address is required");
                     edtPhone.requestFocus();
-                }else if ((phone.length() < 10) || (phone.length() > 13)) {
-                    Toast.makeText(RegisterActivity.this, "Please re-enter your mobile number.", Toast.LENGTH_LONG).show();
-                    edtPhone.setError("Mobile number should not be less than 10 or greater than 13");
-                    edtPhone.requestFocus();
-                } else if (TextUtils.isEmpty(password)) {
+                }else if (TextUtils.isEmpty(password)) {
                     Toast.makeText(RegisterActivity.this, "Please enter your password.", Toast.LENGTH_LONG).show();
                     edtPassword.setError("Password is required");
                     edtPassword.requestFocus();
@@ -190,7 +186,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }else {
                     progressBar.setVisibility(View.VISIBLE);
                     gender = radioButtonGenderSelected.getText().toString();
-                    
+
                     registerUser(fullName, email, DOB, gender, phone, address, password);
                 }
 
@@ -265,38 +261,4 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-   /* private void registerUser(String email, String password) {
-        auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Registration successful
-                            FirebaseUser user = auth.getCurrentUser();
-                            Toast.makeText(RegisterActivity.this, "Registration successful.", Toast.LENGTH_SHORT).show();
-
-                            progressBar.setVisibility(View.GONE);
-                            // Update UI with the user's information
-                        } else {
-                            // If registration fails, display a message to the user
-                            try {
-                                throw task.getException();
-                            } catch (FirebaseAuthWeakPasswordException e) {
-                                // Weak password
-                                Toast.makeText(RegisterActivity.this, "Password is too weak. Try a stronger one.", Toast.LENGTH_SHORT).show();
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
-                                // Invalid email
-                                Toast.makeText(RegisterActivity.this, "Email is invalid. Enter a valid email.", Toast.LENGTH_SHORT).show();
-                            } catch (FirebaseAuthUserCollisionException e) {
-                                // Email already exists
-                                Toast.makeText(RegisterActivity.this, "Email already exist. Try a different email.", Toast.LENGTH_SHORT).show();
-                            } catch (Exception e) {
-                                // Other errors
-                                Toast.makeText(RegisterActivity.this, "An unknown error occurred. Try again.", Toast.LENGTH_SHORT).show();
-                            }
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
-    }*/
 }
