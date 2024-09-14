@@ -23,7 +23,7 @@ Sublet App is a mobile application that allows users to list and browse sublet p
   
       git clone
       ```bash
-      https://github.com/yourusername/suas-sublet-app.git
+      https://github.com/atiteck-world/suas-sublet-app.git
   
   2. **Open the project in Android Studio.**
   
